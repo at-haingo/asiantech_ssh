@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:id="@+id/edtUserName"
-        android:hint="input username"
+        android:hint="@string/hint_edt_username"
         android:layout_marginTop="50dp"
         android:gravity="center"/>
 
@@ -20,7 +20,7 @@
         android:layout_height="40dp"
         android:id="@+id/edtAge"
         android:layout_marginTop="30dp"
-        android:hint="input your age"
+        android:hint="@string/hint_edt_age"
         android:inputType="numberSigned"
         android:gravity="center"/>
     
@@ -30,6 +30,6 @@
         android:id="@+id/btnIntent"
         android:layout_marginTop="30dp"
         android:layout_gravity="center"
-        android:text="GO"/>
+        android:text="@string/btnIntent"/>
 
 </LinearLayout>

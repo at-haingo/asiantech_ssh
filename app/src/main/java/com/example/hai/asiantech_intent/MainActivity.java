@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mEdtUserName.setText(null);
                 mEdtAge.setText(null);
             }else{
-                Toast.makeText(this, "PLEASE INPUT YOUR INFOMATION", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getResources().getString(R.string.toast_input), Toast.LENGTH_SHORT).show();
             }
 
         }
