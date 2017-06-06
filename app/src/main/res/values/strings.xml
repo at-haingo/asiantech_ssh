@@ -4,4 +4,6 @@
     <string name="hint_edt_username">input username</string>
     <string name="hint_edt_age">input your age</string>
     <string name="btnIntent">GO</string>
+    <string name="username">Welcome: %s</string>
+    <string name="age">Age: %s</string>
 </resources>

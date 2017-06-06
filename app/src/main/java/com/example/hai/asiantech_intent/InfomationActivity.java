@@ -11,15 +11,13 @@ import android.widget.TextView;
 
 public class InfomationActivity extends Activity {
 
-    private TextView mTvUserName, mTvAge;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.infomation_activity);
 
-        mTvUserName = (TextView) findViewById(R.id.tvUserName);
-        mTvAge = (TextView) findViewById(R.id.tvAge);
+        TextView tvUserName = (TextView) findViewById(R.id.tvUserName);
+        TextView tvAge = (TextView) findViewById(R.id.tvAge);
 
         Intent intent = getIntent();
         Bundle getInfomation = intent.getBundleExtra("Infomation");
@@ -27,8 +25,8 @@ public class InfomationActivity extends Activity {
         String username = getInfomation.getString(MainActivity.KEY_USER_NAME);
         String age = getInfomation.getString(MainActivity.KEY_AGE);
 
-        mTvUserName.setText("Wellcome " +username);
-        mTvAge.setText("Age: " +age);
+        tvUserName.setText(getResources().getString(R.string.username, username));
+        tvAge.setText(getResources().getString(R.string.age, age));
 
     }
 }

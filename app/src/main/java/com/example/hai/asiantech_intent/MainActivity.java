@@ -11,8 +11,8 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     public static final String KEY_USER_NAME = "USER_NAME";
     public static final String KEY_AGE = "AGE";
-    private EditText mEdtUserName, mEdtAge;
-    private Button mBtnIntent;
+    private EditText mEdtUserName;
+    private EditText mEdtAge;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,31 +21,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mEdtUserName = (EditText) findViewById(R.id.edtUserName);
         mEdtAge = (EditText) findViewById(R.id.edtAge);
-        mBtnIntent = (Button) findViewById(R.id.btnIntent);
+        Button btnIntent = (Button) findViewById(R.id.btnIntent);
 
-        mBtnIntent.setOnClickListener(this);
+        btnIntent.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        if(v.getId() == R.id.btnIntent){
-
+        if (v.getId() == R.id.btnIntent) {
             String username = mEdtUserName.getText().toString();
             String age = mEdtAge.getText().toString();
 
-            if(!username.equals("") && !age.equals("")){
+            if (!username.equals("") && !age.equals("")) {
                 Intent intent = new Intent(MainActivity.this, InfomationActivity.class);
-
                 Bundle bundle = new Bundle();
-
                 bundle.putString(KEY_USER_NAME, username);
                 bundle.putString(KEY_AGE, age);
-
                 intent.putExtra("Infomation", bundle);
                 startActivity(intent);
                 mEdtUserName.setText(null);
                 mEdtAge.setText(null);
-            }else{
+            } else {
                 Toast.makeText(this, getResources().getString(R.string.toast_input), Toast.LENGTH_SHORT).show();
             }
 
