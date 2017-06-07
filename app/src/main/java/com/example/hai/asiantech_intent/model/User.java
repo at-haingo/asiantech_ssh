@@ -6,16 +6,16 @@ import java.io.Serializable;
  * Created by Hai on 6/7/2017.
  */
 
-public class Users implements Serializable{
+public class User implements Serializable {
     String name;
     String address;
     String phone;
     String gender;
 
-    public Users() {
+    public User() {
     }
 
-    public Users(String name, String address, String phone, String gender) {
+    public User(String name, String address, String phone, String gender) {
         this.name = name;
         this.address = address;
         this.phone = phone;

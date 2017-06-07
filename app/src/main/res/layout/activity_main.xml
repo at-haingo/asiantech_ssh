@@ -8,28 +8,28 @@
     tools:context="com.example.hai.asiantech_intent.Bai1.MainActivity1">
 
     <EditText
+        android:id="@+id/edtUserName"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:id="@+id/edtUserName"
-        android:hint="@string/hint_edt_username"
         android:layout_marginTop="50dp"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:hint="@string/hint_edt_username" />
 
     <EditText
+        android:id="@+id/edtAge"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:id="@+id/edtAge"
         android:layout_marginTop="30dp"
+        android:gravity="center"
         android:hint="@string/hint_edt_age"
-        android:inputType="numberSigned"
-        android:gravity="center"/>
-    
+        android:inputType="numberSigned" />
+
     <Button
+        android:id="@+id/btnIntent"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:id="@+id/btnIntent"
-        android:layout_marginTop="30dp"
         android:layout_gravity="center"
-        android:text="@string/btnIntent"/>
+        android:layout_marginTop="30dp"
+        android:text="@string/btnIntent" />
 
 </LinearLayout>

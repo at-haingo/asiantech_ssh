@@ -8,24 +8,26 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 
 import com.example.hai.asiantech_intent.R;
-import com.example.hai.asiantech_intent.model.Users;
+import com.example.hai.asiantech_intent.model.User;
 
 /**
  * Created by Hai on 6/7/2017.
  */
 
-public class NewUserActivity extends Fragment {
+public class NewUserActivity extends Fragment implements CompoundButton.OnCheckedChangeListener {
     public static final String KEY_USER = "KEY_USER";
     public static final String KEY_BUNDLE = "BUNDLE";
     private EditText mEdtUserName;
     private EditText mEdtAddress;
     private EditText mEdtPhone;
     private String mGender;
+    private RadioButton mRbMale;
+    private RadioButton mRbFamale;
 
     @Nullable
     @Override
@@ -35,22 +37,18 @@ public class NewUserActivity extends Fragment {
         mEdtUserName = (EditText) layout.findViewById(R.id.edtUserName);
         mEdtAddress = (EditText) layout.findViewById(R.id.edtAddress);
         mEdtPhone = (EditText) layout.findViewById(R.id.edtPhone);
-        RadioGroup rgGenderGroup = (RadioGroup) layout.findViewById(R.id.rgRadioGroup);
-        RadioButton rbMale = (RadioButton) layout.findViewById(R.id.rbMale);
-        RadioButton rbFemale = (RadioButton) layout.findViewById(R.id.rbFemale);
-        int isChecked = rgGenderGroup.getCheckedRadioButtonId();
-        if (isChecked == R.id.rbMale) {
-            mGender = rbMale.getText().toString();
-        } else if (isChecked == R.id.rbFemale) {
-            mGender = rbFemale.getText().toString();
-        }
+        mRbMale = (RadioButton) layout.findViewById(R.id.rbMale);
+        mRbFamale = (RadioButton) layout.findViewById(R.id.rbFemale);
+        mRbMale.setOnCheckedChangeListener(this);
+        mRbFamale.setOnCheckedChangeListener(this);
+
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String username = mEdtUserName.getText().toString();
                 String address = mEdtAddress.getText().toString();
                 String phone = mEdtPhone.getText().toString();
-                Users user = new Users(username, address, phone, mGender);
+                User user = new User(username, address, phone, mGender);
 
                 Intent intent = new Intent(getContext(), InfomationActivity.class);
                 Bundle bundle = new Bundle();
@@ -60,5 +58,15 @@ public class NewUserActivity extends Fragment {
             }
         });
         return layout;
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        if (mRbMale.isChecked()) {
+            mGender = mRbMale.getText().toString();
+        }
+        if (mRbFamale.isChecked()) {
+            mGender = mRbFamale.getText().toString();
+        }
     }
 }

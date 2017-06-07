@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.hai.asiantech_intent.R;
-import com.example.hai.asiantech_intent.model.Users;
+import com.example.hai.asiantech_intent.model.User;
 
 /**
  * Created by Hai on 6/7/2017.
@@ -25,7 +25,7 @@ public class InfomationActivity extends Activity {
 
         Intent intent = getIntent();
         Bundle bundle = intent.getBundleExtra(NewUserActivity.KEY_BUNDLE);
-        Users user = (Users) bundle.getSerializable(NewUserActivity.KEY_USER);
+        User user = (User) bundle.getSerializable(NewUserActivity.KEY_USER);
         tvUserName.setText(user.getName());
         tvAddress.setText(user.getAddress());
         tvPhone.setText(user.getPhone());

@@ -14,7 +14,7 @@ public class InfomationActivity1 extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.infomation_activity);
+        setContentView(R.layout.activity_infomation_1);
 
         TextView tvUserName = (TextView) findViewById(R.id.tvUserName);
         TextView tvAge = (TextView) findViewById(R.id.tvAge);
