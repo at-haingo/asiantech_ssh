@@ -9,7 +9,7 @@ import android.widget.TextView;
  * Created by Hai on 6/6/2017.
  */
 
-public class InfomationActivity extends Activity {
+public class InfomationActivity1 extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +22,8 @@ public class InfomationActivity extends Activity {
         Intent intent = getIntent();
         Bundle getInfomation = intent.getBundleExtra("Infomation");
 
-        String username = getInfomation.getString(MainActivity.KEY_USER_NAME);
-        String age = getInfomation.getString(MainActivity.KEY_AGE);
+        String username = getInfomation.getString(MainActivity1.KEY_USER_NAME);
+        String age = getInfomation.getString(MainActivity1.KEY_AGE);
 
         tvUserName.setText(getResources().getString(R.string.username, username));
         tvAge.setText(getResources().getString(R.string.age, age));
