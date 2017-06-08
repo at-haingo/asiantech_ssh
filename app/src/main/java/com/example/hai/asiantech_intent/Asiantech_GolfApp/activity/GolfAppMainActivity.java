@@ -96,4 +96,5 @@ public class GolfAppMainActivity extends AppCompatActivity implements View.OnKey
             mRbMale.setBackgroundColor(getResources().getColor(R.color.radiobutton_color_noselected));
         }
     }
+
 }

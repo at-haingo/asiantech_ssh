@@ -33,4 +33,5 @@ public class InfomationGolfAppActivity extends Activity {
         tvName.setText(user.getName());
         tvGender.setText(user.getGender());
     }
+
 }
