@@ -3,11 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.hai.asiantech_intent.activity.MainActivity">
+    tools:context=".Asiantech_fragment.activity.MainActivity">
 
     <fragment
         android:id="@+id/fragment_new_user"
-        android:name="com.example.hai.asiantech_intent.activity.NewUserActivity"
+        android:name="com.example.hai.asiantech_intent.Asiantech_fragment.activity.NewUserActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

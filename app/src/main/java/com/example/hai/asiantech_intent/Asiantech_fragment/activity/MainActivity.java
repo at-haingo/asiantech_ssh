@@ -1,4 +1,4 @@
-package com.example.hai.asiantech_intent.activity;
+package com.example.hai.asiantech_intent.Asiantech_fragment.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

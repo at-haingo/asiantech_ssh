@@ -1,4 +1,4 @@
-package com.example.hai.asiantech_intent.model;
+package com.example.hai.asiantech_intent.Asiantech_fragment.model;
 
 import java.io.Serializable;
 

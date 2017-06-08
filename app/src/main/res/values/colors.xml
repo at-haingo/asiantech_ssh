@@ -3,4 +3,13 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="textColor">#ffffff</color>
+    <color name="editext.hint.color">#ffffff</color>
+    <color name="button.color">#536532</color>
+    <color name="editext.color">#708442</color>
+    <color name="background.color">#829F48</color>
+    <color name="edittext.background">#6C8042</color>
+    <color name="imageview.backgound.color">#67753D</color>
+    <color name="radiobutton.color.selected">#536532</color>
+    <color name="radiobutton.color.noselected">#708442</color>
 </resources>

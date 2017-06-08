@@ -1,4 +1,4 @@
-package com.example.hai.asiantech_intent.activity;
+package com.example.hai.asiantech_intent.Asiantech_fragment.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.hai.asiantech_intent.R;
-import com.example.hai.asiantech_intent.model.User;
+import com.example.hai.asiantech_intent.Asiantech_fragment.model.User;
 
 /**
  * Created by Hai on 6/7/2017.

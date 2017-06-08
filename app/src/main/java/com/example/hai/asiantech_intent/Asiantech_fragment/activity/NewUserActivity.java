@@ -1,4 +1,4 @@
-package com.example.hai.asiantech_intent.activity;
+package com.example.hai.asiantech_intent.Asiantech_fragment.activity;
 
 import android.app.Fragment;
 import android.content.Intent;
@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 
 import com.example.hai.asiantech_intent.R;
-import com.example.hai.asiantech_intent.model.User;
+import com.example.hai.asiantech_intent.Asiantech_fragment.model.User;
 
 /**
  * Created by Hai on 6/7/2017.

@@ -13,4 +13,12 @@
     <string name="female">Female</string>
     <string name="button">Submit</string>
     <string name="gender">Gender</string>
+    <string name="textview.text.title">Golf App</string>
+    <string name="textview.text.slogan">Some text blah about something</string>
+    <string name="editext.hint.email_address">Email Address</string>
+    <string name="editext.hint.emaill_password">Email Password</string>
+    <string name="editext.hint.name">Name</string>
+    <string name="togglebutton.text.male">Male</string>
+    <string name="togglebutton.text.female">Female</string>
+    <string name="button.text.continue">Continue</string>
 </resources>
