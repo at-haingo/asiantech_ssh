@@ -44,7 +44,7 @@ public class MainActivity1 extends AppCompatActivity implements View.OnClickList
             } else {
                 Toast.makeText(this, getResources().getString(R.string.toast_input), Toast.LENGTH_SHORT).show();
             }
-
         }
     }
+
 }
