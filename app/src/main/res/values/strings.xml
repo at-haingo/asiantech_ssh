@@ -1,9 +1,16 @@
 <resources>
-    <string name="app_name">Asiantech_Intent</string>
     <string name="toast_input">PLEASE INPUT YOUR INFOMATION</string>
     <string name="hint_edt_username">input username</string>
     <string name="hint_edt_age">input your age</string>
     <string name="btnIntent">GO</string>
     <string name="username">Welcome: %s</string>
     <string name="age">Age: %s</string>
+    <string name="app_name">New User</string>
+    <string name="user_name">User Name</string>
+    <string name="address">Address</string>
+    <string name="phone">Phone</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="button">Submit</string>
+    <string name="gender">Gender</string>
 </resources>
