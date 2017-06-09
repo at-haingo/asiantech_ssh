@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="edt.width">200dp</dimen>
+    <dimen name="edt.height">50dp</dimen>
+    <dimen name="rg.width">316dp</dimen>
+    <dimen name="rg.height">30dp</dimen>
+    <dimen name="ivUser.width">100dp</dimen>
+    <dimen name="ivUser.height">100dp</dimen>
+</resources>

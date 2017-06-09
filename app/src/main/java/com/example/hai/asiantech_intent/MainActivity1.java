@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity1 extends AppCompatActivity implements View.OnClickListener {
     public static final String KEY_USER_NAME = "USER_NAME";
     public static final String KEY_AGE = "AGE";
     private EditText mEdtUserName;
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String age = mEdtAge.getText().toString();
 
             if (!username.equals("") && !age.equals("")) {
-                Intent intent = new Intent(MainActivity.this, InfomationActivity.class);
+                Intent intent = new Intent(MainActivity1.this, InfomationActivity1.class);
                 Bundle bundle = new Bundle();
                 bundle.putString(KEY_USER_NAME, username);
                 bundle.putString(KEY_AGE, age);
