@@ -2,8 +2,11 @@ package com.example.hai.asiantech_intent.Asiantech_GolfApp.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.view.KeyEvent;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -18,7 +21,7 @@ import com.example.hai.asiantech_intent.R;
  * Created by Hai on 6/8/2017.
  */
 
-public class GolfAppMainActivity extends AppCompatActivity implements View.OnKeyListener, CompoundButton.OnCheckedChangeListener {
+public class GolfAppMainActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener, TextWatcher {
 
     public static String KEY_GET_INTENT = "1";
     public static String KEY_GET_BUNDLE = "2";
@@ -28,6 +31,7 @@ public class GolfAppMainActivity extends AppCompatActivity implements View.OnKey
     private RadioButton mRbMale;
     private RadioButton mRbFemale;
     private String mGender;
+    Button mBtnContinue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,13 +45,14 @@ public class GolfAppMainActivity extends AppCompatActivity implements View.OnKey
         mEdtName = (EditText) findViewById(R.id.edtName);
         mRbMale = (RadioButton) findViewById(R.id.rbMaleGolf);
         mRbFemale = (RadioButton) findViewById(R.id.rbFemaleGolf);
-        Button btnContinue = (Button) findViewById(R.id.btnContinue);
+        mBtnContinue = (Button) findViewById(R.id.btnContinue);
 
         mRbMale.setOnCheckedChangeListener(this);
         mRbFemale.setOnCheckedChangeListener(this);
-        mEdtEmail.setOnKeyListener(this);
-        mEdtPassword.setOnKeyListener(this);
-        btnContinue.setOnClickListener(new View.OnClickListener() {
+        mEdtEmail.addTextChangedListener(this);
+        mEdtPassword.addTextChangedListener(this);
+        mEdtName.addTextChangedListener(this);
+        mBtnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String email = mEdtEmail.getText().toString();
@@ -61,7 +66,6 @@ public class GolfAppMainActivity extends AppCompatActivity implements View.OnKey
                         bundle.putSerializable(KEY_GET_BUNDLE, user);
                         intent.putExtra(KEY_GET_INTENT, bundle);
                         startActivity(intent);
-
                     }
                 }
             }
@@ -69,33 +73,37 @@ public class GolfAppMainActivity extends AppCompatActivity implements View.OnKey
     }
 
     @Override
-    public boolean onKey(View v, int keyCode, KeyEvent event) {
-        if (v.getId() == R.id.edtEmail) {
-            if (keyCode == KeyEvent.KEYCODE_ENTER) {
-                mEdtPassword.setEnabled(true);
-            }
-        }
-        if (v.getId() == R.id.edtPassword) {
-            if (keyCode == KeyEvent.KEYCODE_ENTER) {
-                mEdtName.setEnabled(true);
-            }
-        }
-        return false;
-    }
-
-    @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         if (mRbMale.isChecked()) {
             mGender = mRbMale.getText().toString();
-            mRbMale.setBackgroundColor(getResources().getColor(R.color.radiobutton_color_selected));
-            mRbFemale.setBackgroundColor(getResources().getColor(R.color.radiobutton_color_noselected));
+            mRbMale.setBackgroundColor(ContextCompat.getColor(this, R.color.radiobutton_color_selected));
+            mRbFemale.setBackgroundColor(ContextCompat.getColor(this, R.color.radiobutton_color_noselected));
         }
         if (mRbFemale.isChecked()) {
             mGender = mRbFemale.getText().toString();
-            mRbFemale.setBackgroundColor(getResources().getColor(R.color.radiobutton_color_selected));
-            mRbMale.setBackgroundColor(getResources().getColor(R.color.radiobutton_color_noselected));
+            mRbFemale.setBackgroundColor(ContextCompat.getColor(this, R.color.radiobutton_color_selected));
+            mRbMale.setBackgroundColor(ContextCompat.getColor(this, R.color.radiobutton_color_noselected));
         }
     }
 
-}
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+        if (mEdtEmail.hasFocus() && !TextUtils.isEmpty(mEdtEmail.getText().toString())) {
+            mEdtPassword.setEnabled(true);
+        } else if (mEdtPassword.hasFocus() && !TextUtils.isEmpty(mEdtPassword.getText().toString())) {
+            mEdtName.setEnabled(true);
+        } else if (mEdtName.hasFocus() && !TextUtils.isEmpty(mEdtName.getText().toString())){
+            mBtnContinue.setEnabled(true);
+        }
+    }
+}

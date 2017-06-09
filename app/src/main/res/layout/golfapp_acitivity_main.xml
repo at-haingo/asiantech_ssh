@@ -165,6 +165,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="40dp"
+            android:enabled="false"
             android:background="@color/button.color"
             android:text="@string/button.text.continue"
             android:textColor="@color/textColor" />

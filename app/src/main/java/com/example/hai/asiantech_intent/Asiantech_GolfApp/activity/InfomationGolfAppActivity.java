@@ -35,4 +35,3 @@ public class InfomationGolfAppActivity extends Activity {
     }
 
 }
-
